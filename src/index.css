@@ -11,16 +11,41 @@ body {
 .container {
    width: 400px;
    height: fit-content;
-   margin: auto;
+   margin: 80px auto;
 }
 .head-sec {
    text-align: center;
    padding: 20px;
    border-radius: 8px;
+   background-color: rgb(252, 175, 30);
 }
 
 .head-sec h2 {
    margin: 0;
    margin-bottom: 16px;
    color: rgba(0, 0, 0, 0.7);
+}
+
+.input-sec{
+    padding: 16px;
+    display: flex;
+  }
+  
+  .input-sec input{
+    outline: none;
+    border: none;
+    padding: 12px;
+    width: 80%;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .input-sec button{
+    background-color: rgb(219, 187, 128);
+    border: none;
+    border-radius: 0 4px 4px 0;
+    width: 20%;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
