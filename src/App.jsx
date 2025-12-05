@@ -5,12 +5,23 @@ import TaskTile from "./components/TaskTile";
 const App = () => {
    const [input, setInput] = useState("");
    const [items, setItems] = useState([]);
+   const [index, setIndex] = useState(null);
 
    const inputRef = useRef();
 
    const storeTasks = () => {
       setItems([...items, input]);
       setInput("");
+   };
+
+   const deleteTask = (key) => {
+      setItems(items.filter((data, index) => index !== key));
+   };
+
+   const editTask = (key) => {
+      inputRef.current.focus();
+      setInput(items[key]);
+      setIndex(key);
    };
 
    return (
@@ -21,7 +32,7 @@ const App = () => {
          </div>
          <div className="task-col">
             {items.map((item, index) => (
-               <TaskTile item={item}/>
+               <TaskTile item={item} editTask={editTask} deleteTask={deleteTask} />
             ))}
          </div>
       </section>
