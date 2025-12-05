@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TaskInput = ({inputRef, input, setInput, storeTasks}) => {
+const TaskInput = ({inputRef, input, setInput, storeTasks, btnText}) => {
   return (
      <div className='input-sec'>
         <input
@@ -12,7 +12,7 @@ const TaskInput = ({inputRef, input, setInput, storeTasks}) => {
            onChange={(e) => setInput(e.target.value)}
         />
         <button disabled={input?.length === 0} onClick={storeTasks}>
-           Add
+          {btnText}
         </button>
      </div>
   );
