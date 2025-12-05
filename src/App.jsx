@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import TaskInput from "./components/TaskInput";
+import TaskTile from "./components/TaskTile";
 
 const App = () => {
    const [input, setInput] = useState("");
@@ -11,11 +12,17 @@ const App = () => {
       setItems([...items, input]);
       setInput("");
    };
+
    return (
       <section className="container">
          <div className="head-sec">
             <h2>Mark The Tasks</h2>
             <TaskInput input={input} setInput={setInput} inputRef={inputRef} storeTasks={storeTasks} />
+         </div>
+         <div>
+            {items.map((item, index) => (
+               <TaskTile item={item}/>
+            ))}
          </div>
       </section>
    );
