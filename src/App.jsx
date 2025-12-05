@@ -34,9 +34,7 @@ const App = () => {
 
    useEffect(() => {
          localStorage.setItem("tasks", JSON.stringify(items));
-   }, [items]);
-   console.log(items);
-   
+   }, [items]);   
 
    return (
       <section className="container">
