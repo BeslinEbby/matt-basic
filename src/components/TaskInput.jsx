@@ -11,7 +11,7 @@ const TaskInput = ({inputRef, input, setInput, storeTasks}) => {
            value={input}
            onChange={(e) => setInput(e.target.value)}
         />
-        <button disabled={input.length === 0} onClick={storeTasks}>
+        <button disabled={input?.length === 0} onClick={storeTasks}>
            Add
         </button>
      </div>

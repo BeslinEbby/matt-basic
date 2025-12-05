@@ -10,11 +10,16 @@ const App = () => {
    const inputRef = useRef();
 
    const storeTasks = () => {
-      setItems([...items, input]);
+     if (index !== null) {
+        setItems(items.map((data, id) => (id === index ? input : data)));
+        setIndex(null);
+     } else {
+        setItems([...items, input]);
+     }
       setInput("");
    };
 
-   const deleteTask = (key) => {
+   const deleteTask = (key) => { 
       setItems(items.filter((data, index) => index !== key));
    };
 
@@ -32,7 +37,7 @@ const App = () => {
          </div>
          <div className="task-col">
             {items.map((item, index) => (
-               <TaskTile item={item} editTask={editTask} deleteTask={deleteTask} />
+               <TaskTile index={index} item={item} editTask={editTask} deleteTask={deleteTask} />
             ))}
          </div>
       </section>
