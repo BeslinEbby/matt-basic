@@ -19,7 +19,7 @@ const App = () => {
             <h2>Mark The Tasks</h2>
             <TaskInput input={input} setInput={setInput} inputRef={inputRef} storeTasks={storeTasks} />
          </div>
-         <div>
+         <div className="task-col">
             {items.map((item, index) => (
                <TaskTile item={item}/>
             ))}
